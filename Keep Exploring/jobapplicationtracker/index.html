@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Job Application Tracker</h1>
+        <p>Track and manage your job applications efficiently!</p>
+    </header>
+
+    <main>
+        <form id="jobApplicationForm" action="/add-application" method="POST">
+            <h2>Add a New Job Application</h2>
+
+            <label for="company">Company Name:</label>
+            <input type="text" id="company" name="company" placeholder="Enter company name" required>
+
+            <label for="position">Job Position:</label>
+            <input type="text" id="position" name="position" placeholder="Enter job position" required>
+
+            <label for="date">Applied Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="status">Application Status:</label>
+            <select id="status" name="status">
+                <option value="Applied">Applied</option>
+                <option value="Interviewed">Interviewed</option>
+                <option value="Offered">Offered</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+
+            <button type="submit">Add Application</button>
+        </form>
+
+        <section id="applicationsList">
+            <h2>Your Applications</h2>
+            <ul id="applications">
+                <!-- Job applications will appear here -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Job Application Tracker. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Handle form submission
+        const form = document.getElementById('jobApplicationForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent page refresh
+
+            // Get form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+
+            try {
+                // Send data to the backend
+                const response = await fetch('/add-application', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert('Application added successfully!');
+                    form.reset(); // Clear form
+                    loadApplications(); // Reload applications list
+                } else {
+                    alert('Failed to add application.');
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+
+        // Fetch and display job applications
+        async function loadApplications() {
+            try {
+                const response = await fetch('/applications');
+                const applications = await response.json();
+
+                // Clear existing applications
+                const applicationsList = document.getElementById('applications');
+                applicationsList.innerHTML = '';
+
+                // Add applications to the list
+                applications.forEach(app => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${app.company_name} - ${app.job_position} (Status: ${app.status})`;
+                    applicationsList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Error fetching applications:', error);
+                alert('An error occurred while loading applications.');
+            }
+        }
+
+        // Load applications on page load
+        loadApplications();
+    </script>
+</body>
+</html>
