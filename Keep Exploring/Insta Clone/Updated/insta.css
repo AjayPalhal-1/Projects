@@ -1,0 +1,136 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Poppins', sans-serif; /* Google Font */
+}
+
+body {
+    background-color: rgb(19, 11, 11);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Main Container */
+#maindiv {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Left Sidebar */
+#leftdiv {
+    width: 300px;
+    height: auto;
+    border: 2px solid rgb(49, 39, 39);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+#leftdiv h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: rgb(255, 204, 0);
+}
+
+#leftdiv h4 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+#leftdiv h4:hover {
+    color: rgb(255, 99, 71);
+}
+
+/* Center Content */
+#centerdiv {
+    width: 60%;
+    border: 2px solid rgb(63, 50, 50);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#storyline {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.circle {
+    margin-top: 10px;
+    height: 70px;
+    width: 70px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.circle:hover {
+    transform: scale(1.1);
+    border-color: rgba(255, 99, 71, 0.8);
+}
+
+.circle img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.post {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    gap: 15px;
+}
+
+.post img {
+    height: 60px;
+    width: 60px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.post p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#postimg,
+#postimg2 {
+    width: 100%;
+    border-radius: 10px;
+    margin: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Right Sidebar */
+#rightdiv {
+    width: 250px;
+    height: auto;
+    border: 2px solid rgb(36, 32, 32);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
