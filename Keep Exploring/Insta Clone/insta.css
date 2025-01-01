@@ -2,6 +2,13 @@
 *
 {
     color: white;
+    font-size: 22px;
+    /* background-image: linear-gradient(
+        #123122,
+        #07165a19,
+        #47abc463,
+        
+    ); */
 }
 #maindiv
 {
@@ -11,39 +18,41 @@
     margin: 20px; */
 
     display: flex ;
-    justify-content: space-between 2%;
+    justify-content: space-between;
+    gap: 2px;
     
-    
-
-    
-
-
 }
 
 #leftdiv
 {
-  width: 2200px;
-  height: 5500px;
-  border: 2px solid rgb(49, 39, 39);
+    position:sticky;
+    top: 0;
+  width: 20%;
+  height:100vh;
+  /* border: 2px solid rgb(49, 39, 39); */
   margin: 10px;
   text-align: center;
 }
 
 #centerdiv
 {
-    width: 4920px;
-    height: 5500px;
-    border: 2px solid rgb(63, 50, 50);
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    /* height: 5500px; */
+    /* border: 2px solid rgb(63, 50, 50); */
     margin: 10px;
+    text-align: center;
 
 }
 
 #rightdiv
 {
-    width: 900px;
-    height: 5500px;
-    border: 2px solid rgb(36, 32, 32);
+    width:20%;
+    height:100vh;
+    /* border: 2px solid rgb(36, 32, 32); */
     margin: 10px;
+    text-align: center;
 
 }
 
@@ -85,8 +94,8 @@ body{
 {
     
     margin-top: 10px;
-    height: 55px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
     border: 1px solid rgb(243, 233, 233);
     border-radius: 50%;
 }
@@ -94,17 +103,23 @@ body{
 #postimg
 {
     height: 800px;
-    width: 80%;
+    width: auto;
+    justify-content: center;
+    align-items: center;
     border: 1px solid rgb(243, 233, 233);
     border-radius: none;
 
-    color: rgb(185, 131, 61);
+  
+  color: rgb(185, 131, 61);
 }
-#postimg2
+
+.img2
 {
     height: 800px;
-    width: 80%;
-    border: 1px solid rgb(243, 233, 233);
+    justify-content: center;
+    width: auto;
+    align-items: center;
+    /* border: 1px solid rgb(243, 233, 233); */
     border-radius: none;
 
     color: rgb(185, 131, 61);
@@ -112,9 +127,15 @@ body{
 
 
 .post{
+    /* margin-left: 24px;
+     */
+     padding: 12px;
     display: flex;
     align-items: center;
     text-align: center;
+    justify-content: left ;
+    gap: 20px;
+
 }
 
 .useracc
@@ -122,4 +143,41 @@ body{
     display: flex;
     align-items: center;
     text-align: center;
+}
+
+.img1
+{
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.img2
+{
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.rection img
+{
+    align-items: start;
+    height: 45px;
+    width: 45px;
+}
+.rection
+{
+    align-items: start;
+    display: flex;
+}
+
+.badrection
+{
+    align-items: start;
+    height: 45px;
+    width: 45px;
+    align-items: start;
+    display: flex;
 }
